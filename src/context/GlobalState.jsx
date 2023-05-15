@@ -1,7 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
+import ReducerState from "./reducerState";
 
 export const Context = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useGlobalState () {
     const context = useContext(Context);
     if (!context) {
@@ -10,13 +12,17 @@ export function useGlobalState () {
     return context;
 }
 
+const initalState = {
+    transactions: []
+}
+
+// eslint-disable-next-line react/prop-types
 export function GlobalProvider  ({ children }) {
-    const [state, setState] = useState([])
+    const [state, dispatch] = useReducer(ReducerState,initalState)
     return (
         <Context.Provider
             value={{
-                state,
-                setState
+                transactions: state.transactions,
             }}
         >
             {children}

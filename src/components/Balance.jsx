@@ -1,10 +1,10 @@
 import { useGlobalState } from "../context/GlobalState"
 function Balance() {
-  const {total} = useGlobalState()
+  const {transactions} = useGlobalState()
   return (
     <div>
       Balance
-      {JSON.stringify(total)}
+      {JSON.stringify(transactions)}
     </div>
 
   )
