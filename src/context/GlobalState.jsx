@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import ReducerState from "./reducerState";
 
 export const Context = createContext();
@@ -18,7 +18,14 @@ const initalState = {
 
 // eslint-disable-next-line react/prop-types
 export function GlobalProvider  ({ children }) {
-  const [state, dispatch] = useReducer(ReducerState,initalState)
+  const [state, dispatch] = useReducer(ReducerState,initalState,
+    ()=>{
+      const localData = localStorage.getItem("transactions")
+      return localData ? JSON.parse(localData) : initalState
+    })
+  useEffect(()=>{
+    localStorage.setItem("transactions",JSON.stringify(state))
+  },[state])
   const addTransaction = (transaction) => {
     dispatch({
       type: "ADD_TRANSACTION",
