@@ -8,12 +8,16 @@ import { GlobalProvider } from "./context/GlobalState"
 function App() {
   return (
     <GlobalProvider>
-      <main>
-        <Header/>
-        <IncomeExpenses/>
-        <Balance/>
-        <TransactionForm/>
-        <TransactionList/>
+      <main className="h-screen flex justify-center items-center bg-zinc-950">
+        <div className="bg-zinc-800 p-10 rounded-lg flex gap-x-10 mx-auto">
+          <section className="grid gap-y-1 my-5">
+            <Header/>
+            <IncomeExpenses/>
+            <Balance/>
+            <TransactionForm/>
+          </section>
+          <TransactionList/>
+        </div>
       </main>
     </GlobalProvider>
   )

@@ -7,7 +7,7 @@ function Balance() {
   ))
   const total=amounts.reduce((acc,item)=>(acc+=item),0)
   return (
-    <div>
+    <div className="font-bold">
       Balance $
       {
         JSON.stringify(total,null,2)

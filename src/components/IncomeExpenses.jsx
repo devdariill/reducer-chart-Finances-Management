@@ -11,11 +11,11 @@ function IncomeExpenses() {
 
   return (
     <>
-      <div>
-        <h4>Income</h4>
+      <div className="flex justify-between">
+        <h4 className="mr-5">Income</h4>
         {income}
       </div>
-      <div>
+      <div className="flex justify-between">
         <h4>Expense</h4>      
         {expense}
       </div>

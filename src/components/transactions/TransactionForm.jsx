@@ -21,14 +21,17 @@ function TransactionForm() {
           type="text" 
           placeholder="Description" 
           onChange={(e)=>setDescription(e.target.value)} 
+          className="bg-zinc-600 px-3 py-2 rounded-lg block w-full mb-2"
         />
         <input 
           type="number" 
           placeholder="00.00" 
           step={0.01}
           onChange={(e)=>setAmount(e.target.value)} 
+          className="bg-zinc-600 px-3 py-2 rounded-lg block w-full mb-2"
         />
-        <button>Add Transaction</button>
+          
+        <button className="bg-indigo-700 px-3 py-2 rounded-lg block w-full mb-2">Add Transaction</button>
       </form>
     </section>
   )
