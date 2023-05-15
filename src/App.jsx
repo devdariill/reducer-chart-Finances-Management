@@ -9,8 +9,8 @@ function App() {
   return (
     <GlobalProvider>
       <main className="h-screen flex justify-center items-center bg-zinc-950">
-        <div className="bg-zinc-800 p-10 rounded-lg flex gap-x-10 mx-auto">
-          <section className="grid gap-y-1 my-5">
+        <div className="bg-zinc-800 p-10 rounded-lg flex gap-x-10 container w-3/6 mx-auto">
+          <section className="grid gap-y-1 w-4/6 my-5">
             <Header/>
             <IncomeExpenses/>
             <Balance/>
