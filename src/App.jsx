@@ -1,6 +1,18 @@
+import Balance from "./components/Balance"
+import Header from "./components/Header"
+import TransactionForm from "./components/TransactionForm"
+import { GlobalProvider } from "./context/GlobalState"
+
 function App() {
   return (
-  <main>Holis</main>
+    <GlobalProvider>
+      <main>
+        Holis
+        <Header/>
+        <Balance/>
+        <TransactionForm/>
+      </main>
+    </GlobalProvider>
   )
 }
 
