@@ -1,10 +1,17 @@
 import { useState } from "react"
+import { useGlobalState } from "../context/GlobalState"
 
 function TransactionForm() {
+  const {addTransaction}=useGlobalState()
   const [description, setDescription] = useState(0)
   const [amount, setAmount] = useState(0)
   const handleSubmit = (e) => {
     e.preventDefault()
+    addTransaction({
+      id:1,
+      description,
+      amount
+    })
     console.log(description,amount)
   }
   return (
