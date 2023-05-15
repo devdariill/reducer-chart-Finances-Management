@@ -1,14 +1,14 @@
 import { useGlobalState } from "../../context/GlobalState"
 
 function TransactionList() {
-  const {transactions}=useGlobalState()
+  const {transactions,deleteTransaction}=useGlobalState()
   return (
     <section>
       {transactions.map((transaction)=>(
         <div key={transaction.id}>
           <h3>{transaction.description}</h3>
           <p>{transaction.amount}</p>
-          <button onClick={()=>console.log(transaction.id)}>❌</button>
+          <button onClick={()=>deleteTransaction(transaction.id)}>❌</button>
         </div>
       ))}
     </section>
